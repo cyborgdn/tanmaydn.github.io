@@ -1,0 +1,860 @@
+html{
+    scroll-behavior: smooth;
+    font-size: 10px;
+    color: #515151;
+    /* padding: 0;
+    margin: 0; */
+}
+
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+section{
+    padding: 3.9rem 0;
+    overflow: hidden;
+}
+
+img{
+    width: 100%;
+    max-width: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+p{
+    font-size: 1.6rem;
+}
+
+.container{
+    width: 80%;
+    max-width: 100rem;
+    margin: 0 auto;
+    padding: 0 2.4rem;
+}
+
+header{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Navigation Bar */
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-item{
+    padding: 2rem 0 0 2rem;
+}
+
+.nav-item:last-child{
+    padding: 2rem 0 2rem 2rem;
+}
+
+.logo{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: 2rem;
+    font-size: 3rem;
+    font-weight: 800;
+    color: #0b0b0b;
+}
+
+.nav-list .logo{
+    color: #fff;
+}
+
+.nav-logo{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 3rem;
+    font-weight: 800;
+    padding: 2rem 0 0 0;
+    text-align: center;
+}
+
+.fa-bars{
+    margin-top: 2.7rem;
+}
+
+.fa-times{
+    display: none;
+}
+
+.menu-toggle{
+    color: #515151;
+    font-size: 2.2rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 2.5rem;
+    cursor: pointer;
+    z-index: 1500;
+}
+
+.nav-list{
+    list-style: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 100%;
+    background-color: #252525;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    z-index: 1250;
+    transform: translateX(-100%);
+    transition: transform .5s;
+}
+
+
+
+.nav::before{
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity .5s;
+}
+
+.open .fa-times{
+    margin-top: 2.7rem;
+    display: block;
+}
+
+.open .fa-bars{
+    display: none;
+}
+
+.open .nav-list{
+    transform: translateX(0);
+}
+
+.open .nav::before{
+    opacity: 1;
+    transform: scale(1);
+}
+
+.nav-link{
+    display: block;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    margin-right: -2px;
+    transition: color .5s;
+}
+
+.nav-link:hover{
+    color: #c59d5f;
+}
+
+/* Hero */
+
+.hero{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.sub-headline{
+    font-size: 2.5rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #6d6d6d;
+    font-weight: bold;
+    line-height: 0.4;
+    margin: 0;
+    padding-bottom: 2rem;
+}
+
+.headline{
+    color: #1a1a1a;
+    font-size: 6rem;
+    margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.headline-description h5{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #403e3e;
+    font-size: 3rem;
+    font-weight: 300;
+    margin-top: 4rem;
+    margin-bottom: 1.2rem;
+}
+
+.btn{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: inline-block;
+    width: 7rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.cta-btn{
+    font-size: 1.4rem;
+    font-weight: bold;
+    border: 2px solid;
+    border-color: #0b0b0b;
+    padding: 0.9rem 1.8rem;
+    color: #0b0b0b;
+    border-radius: .8rem;
+    margin-right: .5rem;
+    transition: background-color 0.5s;
+}
+
+.cta-btn.cv,
+.cta-btn.music-btn{
+    background-color: #0b0b0b;
+    color: #fff;
+}
+
+.cta-btn:hover,
+.cta-btn:focus{
+    color: #fff;
+    background-color: #363333;
+    border-color: #363333;
+}
+
+.model{
+    display: none;
+}
+
+/* About Section */
+
+.about-heading,
+.about-sub-heading{
+    text-align: center;
+    margin: 0 0 .5rem 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #0b0b0b;
+}
+
+.about-heading{
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.about-sub-heading{
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #363333;
+    margin-bottom: 1rem;
+}
+
+.about-container,
+.music-1, .music-2, .music-3,
+.blog-1 .blog-2{
+    width: 80vw;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #363333;
+}
+
+.about-img{
+    width: 50vw;
+    max-width: 50vw;
+}
+
+
+/* Music */
+
+
+.music{
+    padding: 0 0 1rem 0;
+    background: url("images/music-2.jpg") center no-repeat;
+    background-size: cover;
+}
+
+.music .container,
+.blogs .container,
+.projects .container,
+.ongoing-projects .container,
+.contact .container{
+    padding: 0;
+    margin: auto auto 1rem 2rem;
+    /* text-transform: uppercase; */
+}
+
+.music .sub-headline,
+.blogs .sub-headline,
+.projects .sub-headline,
+.ongoing-projects .sub-headline,
+.contact .sub-headline{
+    font-weight: 700;
+    font-size: 4rem;
+}
+
+.music h1,
+.blogs h1,
+.projects h1,
+.ongoing-projects h1,
+.contact h1{
+    color: #0b0b0b;
+    font-size: 4.8rem;
+}
+
+.between{
+    min-height: 65vh;
+    display: flex;
+    align-items: center;
+}
+
+.music-about,
+.blogs-about,
+.projects-about,
+.ongoing-projects-about,
+.contact-about{
+    margin-top: 3rem;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #363333;
+    font-weight: bold;
+    line-height: 1.3;
+}
+
+.music-1, .music-2, .music-3{
+    width: 25rem;
+    max-width: 25rem;
+    margin-bottom: 3rem;
+}
+
+.music-1 span,
+.music-2 span,
+.music-3 span{
+    font-size: 1.5rem;
+    margin: auto;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #363333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+}
+
+.music-1 .heading,
+.music-2 .heading,
+.music-3 .heading{
+    font-size: 2.5rem;
+    color: #0b0b0b;
+    font-weight: bold;
+}
+
+.music-1 .details,
+.music-2 .details,
+.music-3 .details{
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+
+footer{
+    height: 5rem;
+    max-height: 5rem;
+    /* margin: 0; */
+    padding-top: 3rem;
+    background-color: #403e3e;
+    margin: auto;
+}
+
+footer .container{
+    align-items: center;
+    justify-content: center;
+}
+
+footer p{
+    text-align: center;
+    margin: auto;
+    color: #fff;
+}
+
+/* Blogs */
+
+.blogs{
+    padding: 0 0 1rem 0;
+    background: url("images/blog-3.jpg") center no-repeat;
+    background-size: cover;
+}
+
+/* Projects */
+
+.projects{
+    padding: 0 0 1rem 0;
+    background: url("images/projects-1.jpg") center no-repeat;
+    background-size: cover;
+}
+
+.ongoing-projects{
+    padding: 0 0 1rem 0;
+    background: url("images/projects-2.jpg") center no-repeat;
+    background-size: cover;
+}
+
+.ongoing-projects .headline{
+    font-size: 4rem;
+}
+
+.ongoing-projects .sub-headline{
+    padding-bottom: 10px;
+}
+
+/* Contact */
+
+.contact{
+    padding: 0 0 1rem 0;
+    background: url("images/contact-1.jpg") center no-repeat;
+    background-size: cover;
+}
+
+.contact-sub-heading{
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 3.5rem;
+    color: #403e3e;
+    font-weight: bold;
+}
+
+
+.send-email .btn{
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 13rem;
+}
+
+.contact-info .contact-sub-heading{
+    color: #0b0b0b;
+}
+
+.social-media{
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fa-linkedin, .fa-instagram, .fa-youtube, .fa-spotify, .fa-medium{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    color: #0b0b0b;
+    font-size: 2.2rem;
+    cursor: pointer;
+    transition: color .5s;
+}
+
+.fa-linkedin:hover, .fa-instagram:hover, .fa-youtube:hover, .fa-spotify:hover, .fa-medium:hover,
+.fa-linkedin:focus, .fa-instagram:focus, .fa-youtube:focus, .fa-spotify:focus, .fa-medium:focus{
+    color: #403e3e;
+}
+
+
+@media screen and (min-width: 900px){
+
+    /* Nav Bar */
+
+    header .container{
+        width: 90%;
+        max-width: 90%;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    .menu-toggle{
+        display: none;
+    }
+
+    .logo{
+        margin-top: 0;
+    }
+
+    .nav{
+        justify-content: space-between;
+    }
+
+    .nav-list{
+        position: initial;
+        width: initial;
+        height: initial;
+        background-color: transparent;
+        padding: 0;
+        justify-content: initial;
+        flex-direction: row;
+        transform: initial;
+    }
+
+    .nav-item{
+        /* margin-top: 2rem; */
+        margin-left: 2.4rem;
+        margin-right: 2.4rem;
+        font-weight: 500;
+        color: #0b0b0b;
+        border: none;
+    }
+
+
+
+    .nav-item:last-child{
+        margin-right: 2rem;
+    }
+
+    .nav-logo{
+        display: none;
+    }
+
+    .nav-link{
+        font-size: 1.7rem;
+        color: #0b0b0b;
+    }
+
+    .active{
+        position: relative;
+    }
+
+    .active::before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #0b0b0b;
+        left: 0;
+        bottom: -3px;
+    }
+
+    /* Hero */
+
+    .model{
+        display: block;
+        width: 30vw;
+    }
+
+    .hero .container{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .hero-desc{
+        margin: auto 0 auto 0;
+    }
+
+    /* About Section */
+
+    .about-container{
+        display: flex;
+        justify-content: space-around;
+        width: 70vw;
+    }
+
+    .about-img{
+        width: 10vw;
+    }
+
+    .about-text{
+        text-align: left;
+        width: 50vw;
+    }
+
+    /* Project Section */
+
+    .project-blocks,
+    .ongoing-project-blocks{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    /* Blog Section */
+
+    .blog-blocks{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    /* Music Section */
+
+    .music-blocks{
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+
+/* Projects Try */
+
+.row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Create four equal columns that floats next to eachother */
+.column {
+  float: left;
+  width: 15%;
+  height: 10vh;
+  max-height: 10vh;
+}
+
+/* The Modal (background) */
+.modal,
+.modal-1,
+.modal-2,
+.modal-3,
+.modal-4,
+.modal-5,
+.modal-6 {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 5vh;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content,
+.modal-content-1,
+.modal-content-2,
+.modal-content-3,
+.modal-content-4,
+.modal-content-5,
+.modal-content-6 {
+  position: relative;
+  background-color: black;
+  margin: auto;
+  padding: 5vh 0 0 0;
+  height: 80vh;
+  max-width: 1200px;
+  display: flex;
+}
+
+/* The Close Button */
+.close,
+.close-1,
+.close-2,
+.close-3,
+.close-4,
+.close-5,
+.close-6 {
+  color: white;
+  position: absolute;
+  z-index: 1500;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus,
+.close-1:hover,
+.close-1:focus,
+.close-2:hover,
+.close-2:focus,
+.close-3:hover,
+.close-3:focus,
+.close-4:hover,
+.close-4:focus,
+.close-5:hover,
+.close-5:focus,
+.close-6:hover,
+.close-6:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Hide the slides by default */
+.mySlides,
+.mySlides-1,
+.mySlides-2,
+.mySlides-3,
+.mySlides-4,
+.mySlides-5,
+.mySlides-6{
+  display: none;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.mySlides:first-child,
+.mySlides-1:first-child,
+.mySlides-2:first-child,
+.mySlides-3:first-child,
+.mySlides-4:first-child,
+.mySlides-5:first-child,
+.mySlides-6:first-child{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.5rem;
+}
+
+.mySlides:first-child p,
+.mySlides-1:first-child p,
+.mySlides-2:first-child p,
+.mySlides-3:first-child p,
+.mySlides-4:first-child p,
+.mySlides-5:first-child p,
+.mySlides-6:first-child p{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.8rem;
+    color: #eeeeee;
+}
+
+.mySlides:first-child span,
+.mySlides-1:first-child span,
+.mySlides-2:first-child span,
+.mySlides-3:first-child span,
+.mySlides-4:first-child span,
+.mySlides-5:first-child span,
+.mySlides-6:first-child span{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 4rem;
+    font-weight: 900;
+    color: #eeeeee;
+}
+
+.mySlides:first-child .cta-btn,
+.mySlides-1:first-child .cta-btn,
+.mySlides-2:first-child .cta-btn,
+.mySlides-3:first-child .cta-btn,
+.mySlides-4:first-child .cta-btn,
+.mySlides-5:first-child .cta-btn,
+.mySlides-6:first-child .cta-btn{
+    border-color: #fff;
+    color: #fff;
+    transition: border-color 0.5s;
+}
+
+.mySlides:first-child .cta-btn:hover,
+.mySlides:first-child .cta-btn:focus,
+.mySlides-1:first-child .cta-btn:hover,
+.mySlides-1:first-child .cta-btn:focus,
+.mySlides-2:first-child .cta-btn:hover,
+.mySlides-2:first-child .cta-btn:focus,
+.mySlides-3:first-child .cta-btn:hover,
+.mySlides-3:first-child .cta-btn:focus,
+.mySlides-4:first-child .cta-btn:hover,
+.mySlides-4:first-child .cta-btn:focus,
+.mySlides-5:first-child .cta-btn:hover,
+.mySlides-5:first-child .cta-btn:focus,
+.mySlides-6:first-child .cta-btn:hover,
+.mySlides-6:first-child .cta-btn:focus{
+    color: #fff;
+    background-color: transparent;
+    border-color: #363333;
+}
+
+
+/* Next & previous buttons */
+.prev,
+.next,
+.prev-1,
+.next-1,
+.prev-2,
+.next-2,
+.prev-3,
+.next-3,
+.prev-4,
+.next-4,
+.prev-5,
+.next-5,
+.prev-6,
+.next-6{
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next,
+.next-1,
+.next-2,
+.next-3,
+.next-4,
+.next-5,
+.next-6{
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover,
+.prev-1:hover,
+.next-1:hover,
+.prev-2:hover,
+.next-2:hover,
+.prev-3:hover,
+.next-3:hover,
+.prev-4:hover,
+.next-4:hover,
+.prev-5:hover,
+.next-5:hover,
+.prev-6:hover,
+.next-6:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.pdf{
+    font-size: 2.5rem;
+    color: white;
+    transition: color 0.5s;
+}
+
+.pdf:hover,
+.pdf:focus{
+color: #363333;
+}
