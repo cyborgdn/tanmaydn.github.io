@@ -237,6 +237,11 @@ header{
     border-color: #363333;
 }
 
+.line,
+.line-1{
+    display: none;
+}
+
 .model{
     display: none;
 }
@@ -403,7 +408,6 @@ footer p{
     padding: 0 0 1rem 0;
     background: url("images/blog-3.jpg") center no-repeat;
     background-size: cover;
-    
 }
 
 /* Projects */
@@ -552,6 +556,32 @@ footer p{
 
     /* Hero */
 
+    .middle-lines{
+        display: block;
+        margin: auto;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .line{
+        display: block;
+        width: 100%;
+        max-width: 0.25rem;
+        height: 40vh;
+        background-color: #0b0b0b;
+        margin: auto;
+    }
+
+    .line-1{
+        display: block;
+        width: 100%;
+        max-width: 0.25rem;
+        height: 20vh;
+        background-color: #0b0b0b;
+        margin: auto;
+    }
+
     .model{
         display: block;
         width: 30vw;
@@ -572,7 +602,6 @@ footer p{
         display: flex;
         justify-content: space-around;
         width: 70vw;
-        background-color: #fff;
     }
 
     .about-img{
@@ -590,7 +619,6 @@ footer p{
     .ongoing-project-blocks{
         display: flex;
         justify-content: space-around;
-        background-color: #fbf7f0;
     }
 
     /* Blog Section */
